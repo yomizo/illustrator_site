@@ -1,0 +1,69 @@
+html {
+    min-height:100vh;
+}
+
+body{
+    min-height:100vh;
+}
+
+.wrapper {
+    min-height:100vh;
+    padding:0px;
+    margin:0px;
+}
+
+.menu-wrapper {
+    padding-top: 20px;
+}
+#main{
+    background-color: rgba(186, 226, 239, 0.4);
+    /* min-width:100vh; */
+    padding: 0px;
+    margin: 0px;
+}
+
+#top {
+    position: relative;
+    height: 100vh;
+    background: url("../src/icon_wide.gif") center;
+    background-size: cover;
+}
+#top h1 {
+    display:none;
+    font-size: 6vw;
+    text-shadow: 2px 2px 2px grey;
+    color: white;
+    z-index:99;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+
+#portfolio, #aboutme, #contact, #price {
+    margin: 0px;
+    padding:50px 0px;
+    height:100vh;
+}
+#portfolio {
+    height:auto;
+}
+#aboutme {
+    background-color: lightgray;
+    margin-bottom:0px;
+}
+
+#price {
+    background: lightyellow;
+}
+
+#contact {
+    background: grey;
+}
+
+#sidemenu {
+    margin:0px;
+}
+
+i {
+    margin:10px;
+}

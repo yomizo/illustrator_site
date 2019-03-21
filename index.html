@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="src/Seymour.png" type="image/x-icon">
+    <title>Seymour</title>
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css"> -->
+    <link rel="stylesheet" href="css/style.css" class="">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+</head>
+<body>
+    <div id="app" class="">
+        <div class="ui basic modal">
+            <div class="ui middle aligned center aligned grid">
+                <div class="ui vertical menu sixteen wide column">
+                    <div class="item">
+                        <img class="ui circular centered image" src="src/icon.gif">
+                    </div>
+                    <a href="#top" class="item menu-item active">Welcome!</a>
+                    <a v-for="item in items" class="item menu-item" :href="item.link">
+                        {{item.name}}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="ui top fixed inverted mini menu" id="top-menu">
+            <a id="mobilemenu" class="item">
+                <img src="src/Seymour.png" alt="">
+            </a>
+            <label class="item">
+                <p>Seymour</p>
+            </label>
+            <label class="item right">
+                <button class="ui circular facebook icon button">
+                    <i class="facebook icon"></i>
+                </button>
+                <button class="ui circular twitter icon button">
+                    <i class="twitter icon"></i>
+                </button>
+                <button class="ui circular youtube icon button">
+                    <i class="youtube icon"></i>
+                </button>
+                <button class="ui circular instagram icon button">
+                    <i class="instagram icon"></i>
+                </button>
+                <button class="ui circular green icon button">
+                    <i class="linechat icon"></i>
+                </button>
+            </label>
+        </div>
+        <div class="wrapper ui grid two column row">
+            <div id="sidemenu" class="ui computer only secondary vertical pointing menu three wide column">
+                <div class="menu-wrapper ui sticky fixed">
+                    <div class="item">
+                        <img class="ui circular centered image" src="src/icon.gif">
+                    </div>
+                    <a href="#top" class="item menu-item active welcome">Welcome!</a>
+                    <a v-for="item in items" :class="item.class" class="item menu-item" :href="item.link">
+                        {{item.name}}
+                    </a>
+                    <div class="item">
+                        <a href="#contact" class="ui orange fluid label">
+                            <img class="ui right spaced avatar image" src="src/kids-11.jpg">
+                            Contact
+                        </a>
+                    </div>
+                    <p>Scroll Top : <span id="pixcel"></span></p>
+                </div>
+            </div>
+            <div id="main" class="ui sixteen wide mobile thirteen wide computer column">
+                <!-- Site content !-->
+                <div id="top" class="container">
+                    <h1 class="ui center header">Hi, I'm Seymour.</h1>
+                    <!-- <div class="ui fluid centered image">
+                        <img src="src/icon_wide.gif" alt="" >
+                        <div class="ui orange  huge right ribbon label">
+                            Hello, I'm Seymour
+                        </div>
+                    </div> -->
+                </div>
+                <div id="portfolio" class="container">
+                    <h1 class="ui header aligned centered">
+                        <img src="src/cat_like.jpg" alt="cat_like" class="ui circular image">
+                        Portfolio
+                    </h1>
+                    <br>
+                    <div id="portfolio-contents" class="ui three doubling cards container">
+                        <div v-for="pic in pics" class="ui raised link card">
+                            <div class="image">
+                                <img class="ui rounded image" :src="pic.link" alt="">
+                            </div>
+                            <div class="content">
+                                <a href="" class="header">{{pic.name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="aboutme">
+                    <div class="ui text container">
+                        <h1 class="ui header aligned centered">
+                            <img src="src/memomemo.jpg" alt="zipper_open" class="ui circular image">
+                            About me
+                        </h1>
+                        <div class="ui centered floating message">
+                            <h1 class="ui icon header">
+                                <img class="ui right spaced avatar image" src="src/kids-11.jpg">
+                                <div class="content">Seymour</div>
+                                <div class="ui divider"></div>
+                            </h1>
+                            <p v-for="message in messages" class="subheader">{{message}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="price">
+                    <div class="ui text container">
+                        <h1 class="ui header aligned centered">
+                            <img src="src/purchase.jpg" alt="purchase" class="ui circular image">
+                            Price
+                        </h1>
+                        <div class="ui floating message">
+                        <h4 class="ui header">一枚あたりの価格</h4>
+                        <table class="ui celled table">
+                            <!-- <thead>
+                                <tr>
+                                    <th>Work</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead> -->
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h4 class="ui image header">
+                                            <img src="src/devilgirl_1x1.jpg" class="ui mini rounded image">
+                                            <div class="content">
+                                                SNS用アイコン
+                                                <div class="sub header">お好みのテイストで描き分け可
+                                                </div>
+                                            </div>
+                                        </h4>
+                                    </td>
+                                    <td>
+                                        3,000円〜5,000円（全身の場合）
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="ui image header">
+                                            <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                            <div class="content">
+                                                ブログ用漫画
+                                                <div class="sub header">記事内容をわかりやすく
+                                                </div>
+                                            </div>
+                                        </h4>
+                                    </td>
+                                    <td>
+                                        5,000円
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="ui image header">
+                                            <img src="src/thum.jpg" class="ui mini rounded image">
+                                            <div class="content">
+                                                Youtubeサムネイル画像
+                                                <div class="sub header">ブログのアイキャッチ画像にも
+                                                </div>
+                                            </div>
+                                        </h4>
+                                    </td>
+                                    <td>
+                                        2,500円〜
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4 class="ui image header">
+                                            <img src="src/logo1.jpg" class="ui mini rounded image">
+                                            <div class="content">
+                                                ロゴ
+                                                <div class="sub header">jpg, png, ai(psd)での納品
+                                                </div>
+                                            </div>
+                                        </h4>
+                                    </td>
+                                    <td>
+                                        20,000円
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact">
+                    <div class="ui equal width form centered text container">
+                        <h1 class="ui header aligned centered">
+                            <img src="src/zipper_open.jpg" alt="zipper_open" class="ui circular image">
+                             Contact me
+                        </h1>
+                        <div class="field ui floating message">
+                            <label>お名前</label>
+                            <div class="field">
+                                <input type="text" name="name" placeholder="Name">
+                            </div>
+                            <label>メールアドレス</label>
+                            <div class="field">
+                                <input type="text" name="mail-address" placeholder="Mail Address">
+                            </div>
+                            <div class="field">
+                                <label for="">まずはカテゴリーをお選びください（複数選択可）</label>
+                                <button class="ui toggle button">
+                                    イラスト
+                                </button>
+                                <button class="ui toggle button">
+                                    ロゴ
+                                </button>
+                                <button class="ui toggle button">
+                                    WEBデザイン
+                                </button>
+                            </div>
+                            <div class="field">
+                                <label>ご相談内容</label>
+                                <textarea name="" id="" cols="30" rows="18"></textarea>
+                            </div>
+                            <div class="field">
+                                <div class="ui orange fluid submit button">相談する</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- read js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jq.js"></script>
+</body>
+</html>
